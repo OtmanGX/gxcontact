@@ -1,0 +1,16 @@
+{% extends 'card.html' %}
+{% block title %}
+    Edit Profile
+{% endblock %}
+
+{% block card_title %}
+    Edit Profile
+{% endblock %}
+
+{% block form %}
+     <form method="post" class="offset-md-3" novalidate>
+                    {% csrf_token %}
+                    {% include 'includes/form.html' %}
+                    <button type="submit" class="btn btn-secondary btn-lg mx-2">Update</button>
+                </form>
+{% endblock %}

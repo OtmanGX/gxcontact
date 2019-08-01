@@ -1,0 +1,22 @@
+{% extends 'index.html' %}
+{% block title %}
+Search for {{ search_term }}
+{% endblock %}
+{% block content %}
+  <!-- Main Section -->
+    <div class="container">
+      <h3 class="heading font-weight-light">Results search for "{{ search_term }}"</h3>
+      <hr />
+    </div>
+    <div class="container main-part">
+    {% if contacts %}
+    {% for contact in contacts %}
+{% include 'partials/contact_card.html' %}
+        {% endfor %}
+    {% else %}
+    <p class="d-block font-weight-light">No results</p>
+    {% endif %}
+    </div>
+    <!-- Main Section ends-->
+
+{% endblock %}

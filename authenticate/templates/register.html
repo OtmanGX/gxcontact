@@ -1,0 +1,40 @@
+{#{% extends 'card.html' %}#}
+{#{% block title %}#}
+{#    Register#}
+{#{% endblock %}#}
+{##}
+{#{% block card_title %}#}
+{#    Register#}
+{#{% endblock %}#}
+{##}
+{#{% block form %}#}
+{#    <form method="POST" class="offset-md-3" action="{% url 'register' %}" novalidate>#}
+{#    {% csrf_token %}#}
+{#    {% include 'includes/form.html' %}#}
+{#    <button type="submit" class="btn btn-secondary btn-lg">Sign in</button>#}
+{#</form>#}
+{#{% endblock %}#}
+
+
+
+{% extends 'index.html' %}
+{% load crispy_forms_tags %}
+{% block title %}
+Register
+{% endblock %}
+
+{% block content %}
+<div class="container">
+      <h2 class="heading font-weight-light text-center">Register</h2>
+      <hr />
+    </div>
+<div class="container w-50 card p-4 mt-4">
+<form method="post">
+    {% csrf_token %}
+    {{ form|crispy }}
+    <input type="submit" value="Register" class="btn-block text-white text-center my-3 btn btn-info btn-lg">
+
+</form>
+</div>
+{% endblock %}
+
