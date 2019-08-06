@@ -1,0 +1,20 @@
+{% extends 'index.html' %}
+{% block title %}
+    Login
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <h2 class="heading font-weight-light text-center">{% block heading %}{% endblock %}</h2>
+        <hr />
+    </div>
+    <div class="container {% block card_style %}w-25{% endblock %} card px-0 mt-4">
+    {% block card_title %}{% endblock %}
+        <div class="card-body p-4">
+            {% block form %}
+            {% endblock %}
+        </div>
+        {% block card_footer %}
+        {% endblock %}
+    </div>
+{% endblock %}

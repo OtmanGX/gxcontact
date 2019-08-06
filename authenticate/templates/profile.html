@@ -1,16 +1,17 @@
-{% extends 'card.html' %}
+{% extends 'auth.html' %}
+{% load crispy_forms_tags %}
 {% block title %}
-    Edit Profile
-{% endblock %}
-
-{% block card_title %}
-    Edit Profile
-{% endblock %}
-
+Edit Profile
+{% endblock%}
+{% block heading %}
+Edit Profile
+{% endblock%}
+{% block card_style %}w-50{% endblock %}
 {% block form %}
-     <form method="post" class="offset-md-3" novalidate>
-                    {% csrf_token %}
-                    {% include 'includes/form.html' %}
-                    <button type="submit" class="btn btn-secondary btn-lg mx-2">Update</button>
-                </form>
+<form method="post" novalidate>
+    {% csrf_token %}
+    {{ form|crispy }}
+    <input type="submit" value="Update" class="btn-block text-white text-center my-3 btn btn-info btn-lg">
+
+</form>
 {% endblock %}

@@ -133,7 +133,9 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 # Crispy_form
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
-LOGOUT_REDIRECT_URL = 'home'
+LOGOUT_REDIRECT_URL = 'login'
 LOGIN_REDIRECT_URL = 'home'
 LOGIN_URL = '/login'
 LOGOUT_URL = '/logout'
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
