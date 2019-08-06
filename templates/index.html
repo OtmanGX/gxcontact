@@ -4,8 +4,7 @@
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8" />
-    <meta
-            name="viewport"
+    <meta name="viewport"
             content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
     {#  title icon#}
@@ -29,71 +28,7 @@
 </head>
 <body>
 <!-- Navbar -->
-
-<nav class="navbar-dark navbar-expand-lg px-5">
-    <a class="logo navbar-brand" href="/">
-        <i class="fas fa-user-circle"></i>&nbsp;Contacts
-    </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNavDropdown">
-        <ul class="navbar-nav">
-            {% if request.user.is_authenticated %}
-                <li class="nav-item">
-                    <a href="{% url 'create' %}" class="text-white">
-                        <i class="fas fa-plus"></i> &nbsp; Add Contact
-                    </a>
-                </li>
-            {% endif %}
-        </ul>
-
-
-            <ul class="navbar-nav ml-auto">
-            <form class="form-inline my-2" method="get" action="{% url 'search' %}">
-                <input
-                        class="form-control search-box"
-                        type="search"
-                        placeholder="Find contacts..."
-                        name="search_term"
-                />
-                <button class="btn" type="submit"><i class="fas fa-search"></i></button>
-            </form>
-                {% if request.user.is_authenticated %}
-{#                    <li class="nav-item">#}
-                    <a class="nav-item nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        {{ user.username }}
-                    </a>
-{#                        </li>#}
-                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                                <a class="dropdown-item" href="{% url 'edit_profile' %}">edit profile</a>
-                                                <a class="dropdown-item" href="{% url 'password' %}">change password</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="{% url 'logout' %}">
-                            <i class="fas fa-sign-out-alt"></i>&nbsp;Logout
-                        </a>
-                    </div>
-                    </li>
-                {% else %}
-                    <li class="nav-item">
-                        <a class="nav-link {% if request.path == '/login/' %}active{% endif %}"
-                           href="/login/">
-                            <i class="fas fa-sign-in-alt"></i>&nbsp;Login
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link {% if request.path == '/register/' %}active{% endif %}"
-                           href="/register/">
-                            <i class="fas fa-user-plus"></i>&nbsp;Register
-                        </a>
-                    </li>
-                {% endif %}
-
-
-            </ul>
-    </div>
-
-</nav>
+{% include 'partials/nav.html' %}
 <!-- Navbar ends -->
 <br />
 {% include 'partials/_messages.html' %}

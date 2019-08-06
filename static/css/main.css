@@ -1,17 +1,24 @@
+html {
+	height: 100%;
+}
+
 :root {
-  --back: #29a7a6;
+  --back: #217AEC;
   /* --logo: #ff70a6; */
   --girl: #e64298;
   --boy: #2874dd;
 }
 body {
   font-family: Lato, sans-serif;
+  position: relative;
+  min-height: 100%;
+  padding-bottom: 6rem;
 }
 
 /* Navbar Styles */
 
 nav {
-  font-weight: light;
+  font-weight: 300;
   display: flex;
   justify-content: space-around;
   background-color: var(--back);
@@ -68,7 +75,7 @@ button i {
 .card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   transition: 0.3s;
-  min-width: 250px;
+  min-width: 200px;
   box-sizing: border-box;
 }
 
@@ -120,6 +127,11 @@ footer {
   color: white;
   font-size: 18px;
   border-bottom: 3px solid var(--back);
+  position: absolute;
+	/*extra*/
+	right: 0;
+	bottom: 0;
+	left: 0;
 }
 
 /* footer style ends*/
@@ -152,8 +164,14 @@ footer {
   /* footer style */
   footer {
     font-size: 98% !important;
-    font-weight: light;
+    font-weight: 300;
     letter-spacing: 1px;
+    width: 100%;
+	position: absolute;
+	/*extra*/
+	right: 0;
+	bottom: 0;
+	left: 0;
   }
   /* footer style ends */
 }
